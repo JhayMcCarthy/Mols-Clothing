@@ -1,0 +1,288 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Page transition animations */
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.4s ease-in-out;
+}
+
+.page-enter-from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Home page animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(221, 148, 59, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(221, 148, 59, 0.6);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slide-up 1s ease-out 0.3s both;
+}
+
+.animate-slide-up-delay {
+    animation: slide-up 1s ease-out 0.6s both;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
+}
+
+    .animate-pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    /* Zip opening animation */
+    @keyframes zip-open {
+        0% {
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        25% {
+            clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%);
+            opacity: 0.3;
+            transform: scaleX(0.25);
+        }
+        50% {
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+            opacity: 0.6;
+            transform: scaleX(0.5);
+        }
+        75% {
+            clip-path: polygon(0 0, 75% 0, 75% 100%, 0 100%);
+            opacity: 0.8;
+            transform: scaleX(0.75);
+        }
+        100% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+
+    @keyframes zip-close {
+        0% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        25% {
+            clip-path: polygon(0 0, 75% 0, 75% 100%, 0 100%);
+            opacity: 0.8;
+            transform: scaleX(0.75);
+        }
+        50% {
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+            opacity: 0.6;
+            transform: scaleX(0.5);
+        }
+        75% {
+            clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%);
+            opacity: 0.3;
+            transform: scaleX(0.25);
+        }
+        100% {
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            opacity: 0;
+            transform: scaleX(0);
+        }
+    }
+
+    .animate-zip-open {
+        animation: zip-open 1.5s ease-out forwards;
+        transform-origin: left center;
+    }
+
+    .animate-zip-close {
+        animation: zip-close 1.5s ease-in forwards;
+        transform-origin: left center;
+    }
+
+    /* Enhanced zip teeth effect */
+    .zip-teeth {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .zip-teeth::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(221, 148, 59, 0.3) 1%,
+            rgba(0,0,0,0.2) 2%,
+            transparent 3%,
+            transparent 4%,
+            rgba(221, 148, 59, 0.3) 5%,
+            rgba(0,0,0,0.2) 6%,
+            transparent 7%,
+            transparent 8%,
+            rgba(221, 148, 59, 0.3) 9%,
+            rgba(0,0,0,0.2) 10%,
+            transparent 11%
+        );
+        background-size: 15px 100%;
+        animation: zip-teeth-move 1.5s ease-out forwards;
+        z-index: 1;
+        box-shadow: inset 0 0 20px rgba(221, 148, 59, 0.2);
+    }
+
+    .zip-teeth::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255,255,255,0.1) 1%,
+            transparent 2%,
+            transparent 3%,
+            rgba(255,255,255,0.1) 4%,
+            transparent 5%,
+            transparent 6%,
+            rgba(255,255,255,0.1) 7%,
+            transparent 8%
+        );
+        background-size: 8px 100%;
+        animation: zip-teeth-move 1.5s ease-out forwards;
+        z-index: 2;
+    }
+
+    @keyframes zip-teeth-move {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.8;
+        }
+        50% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+    /* Zip slider effect */
+    .zip-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #DD943B 0%, #B54274 50%, #DD943B 100%);
+        box-shadow: 0 0 10px rgba(221, 148, 59, 0.6), 0 0 20px rgba(181, 66, 116, 0.4);
+        animation: zip-slider-move 1.5s ease-out forwards;
+        z-index: 3;
+    }
+
+    @keyframes zip-slider-move {
+        0% {
+            transform: translateX(-4px);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }

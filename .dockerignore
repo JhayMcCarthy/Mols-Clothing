@@ -1,0 +1,55 @@
+# Dependencies
+node_modules
+vendor
+
+# Build artifacts (but keep public directory structure)
+public/build
+public/hot
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Logs
+*.log
+storage/logs
+
+# Cache
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+bootstrap/cache
+
+# Testing
+tests
+phpunit.xml
+.phpunit.result.cache
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Temporary files
+tmp
+temp
