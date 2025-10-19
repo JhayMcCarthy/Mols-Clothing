@@ -1,0 +1,20 @@
+# Render Environment Variables
+# Copy these to your Render service environment variables
+
+APP_NAME="Mols Clothing"
+APP_ENV=production
+APP_KEY=base64:GfgCNlvsD0doPFavx771nII3F1m6Xly4/UQOCw1DF/Y=
+APP_DEBUG=false
+APP_URL=https://mols-clothing.onrender.com
+
+# Asset URL (forces HTTPS for assets)
+ASSET_URL=https://mols-clothing.onrender.com
+
+# Session and Cache (file-based, no database needed)
+SESSION_DRIVER=file
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+
+# Logging
+LOG_CHANNEL=stderr
+LOG_LEVEL=debug
