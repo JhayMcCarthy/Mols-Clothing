@@ -242,6 +242,13 @@ docker-compose exec app php artisan cache:clear
 ./docker-test-both.sh
 ```
 
+6. **Directory Permission Issues:**
+```bash
+# If you get "bootstrap/cache: No such file or directory":
+# The Dockerfile now creates these directories automatically
+# This should be resolved in the latest version
+```
+
 ### Logs and Debugging
 ```bash
 # View all logs
