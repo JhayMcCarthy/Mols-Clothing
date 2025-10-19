@@ -1,0 +1,78 @@
+# Frontend build stage
+FROM node:18-alpine AS frontend-builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy frontend source files
+COPY resources/ ./resources/
+COPY public/ ./public/
+COPY vite.config.js ./
+
+# Build frontend assets
+RUN npm run build
+
+# Clean up dev dependencies
+RUN npm prune --production
+
+# Production stage
+FROM php:8.2-fpm-alpine
+
+# Install system dependencies
+RUN apk add --no-cache \
+    nginx \
+    supervisor \
+    curl \
+    zip \
+    unzip \
+    git \
+    mysql-client \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    oniguruma-dev \
+    icu-dev
+
+# Install PHP extensions (simplified)
+RUN docker-php-ext-install pdo_mysql mbstring bcmath intl
+
+# Install GD extension
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy application code
+COPY . .
+
+# Copy frontend assets from build stage
+COPY --from=frontend-builder /app/public/build ./public/build
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html/storage \
+    && chmod -R 755 /var/www/html/bootstrap/cache
+
+# Copy Nginx configuration
+COPY docker/nginx.conf /etc/nginx/http.d/default.conf
+
+# Copy Supervisor configuration
+COPY docker/supervisord.conf /etc/supervisord.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start services
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]

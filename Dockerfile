@@ -38,25 +38,18 @@ RUN apk add --no-cache \
     libjpeg-turbo-dev \
     freetype-dev \
     icu-dev \
-    postgresql-dev \
-    mysql-client \
-    nodejs \
-    npm
+    mysql-client
 
-# Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
-        pdo_mysql \
-        pdo_pgsql \
-        mbstring \
-        xml \
-        ctype \
-        json \
-        bcmath \
-        gd \
-        intl \
-        opcache
+# Install PHP extensions (install one by one to avoid conflicts)
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install bcmath
+RUN docker-php-ext-install intl
+RUN docker-php-ext-install opcache
+
+# Configure and install GD extension
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-install gd
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

@@ -232,6 +232,16 @@ docker-compose exec app php artisan cache:clear
 # The build should work without it
 ```
 
+5. **PHP Extension Installation Conflicts:**
+```bash
+# If you get "ctype is already loaded" or similar errors:
+# Try using Dockerfile.simple or Dockerfile.minimal instead
+# These have fewer extensions and are more reliable
+
+# Test different versions:
+./docker-test-both.sh
+```
+
 ### Logs and Debugging
 ```bash
 # View all logs
@@ -289,6 +299,35 @@ environment:
 - [Laravel Docker Guide](https://laravel.com/docs/containerization)
 - [Nginx Configuration](https://nginx.org/en/docs/)
 - [PHP-FPM Configuration](https://www.php.net/manual/en/install.fpm.php)
+
+---
+
+## 📁 Dockerfile Options
+
+### Dockerfile (Main)
+*   **Purpose**: Production-optimized multi-stage Dockerfile for the Laravel + React application.
+*   **Features**: Full PHP extension set, optimized for production.
+*   **Use when**: You need all PHP extensions and features.
+
+### Dockerfile.simple
+*   **Purpose**: Simplified version with fewer PHP extensions to avoid conflicts.
+*   **Features**: Essential extensions only (pdo_mysql, mbstring, bcmath, intl, gd).
+*   **Use when**: Main Dockerfile fails due to extension conflicts.
+
+### Dockerfile.minimal
+*   **Purpose**: Minimal version with only essential components.
+*   **Features**: Only pdo_mysql and mbstring extensions.
+*   **Use when**: You need the most reliable build with minimal dependencies.
+
+### Testing Different Versions
+```bash
+# Test all versions
+./docker-test-both.sh
+
+# Test specific version
+docker build -f Dockerfile.simple -t mols-clothing-simple .
+docker build -f Dockerfile.minimal -t mols-clothing-minimal .
+```
 
 ---
 
