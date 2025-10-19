@@ -40,7 +40,7 @@ function Services() {
                 </div>
                 
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <h1 className={`text-6xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#0F8E69'}}>
+                    <h1 className={`text-6xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#463164'}}>
                         Our Services
                     </h1>
                     <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
@@ -55,12 +55,12 @@ function Services() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                         {/* Ready-to-Wear */}
                         <div className={`bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 group transform hover:-translate-y-2 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.5s'}}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#0F8E69'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#463164'}}>
                                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4 text-gray-800 text-center group-hover:text-green-600 transition-colors duration-300">Ready-to-Wear</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-gray-800 text-center group-hover:text-purple-600 transition-colors duration-300">Ready-to-Wear</h3>
                             <p className="text-gray-600 mb-6 text-center leading-relaxed">
                                 Stylish, well-fitted pieces you can wear instantly. Perfect for those who want quality African fashion without the wait.
                             </p>
@@ -91,7 +91,7 @@ function Services() {
                                 </li>
                             </ul>
                             <div className="text-center">
-                                <Link to="/gallery" className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-white" style={{backgroundColor: '#0F8E69'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#DD943B'} onMouseLeave={(e) => e.target.style.backgroundColor = '#0F8E69'}>
+                                <Link to="/gallery" className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-white" style={{backgroundColor: '#463164'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#816bb9'} onMouseLeave={(e) => e.target.style.backgroundColor = '#463164'}>
                                     View Collection
                                 </Link>
                             </div>
@@ -148,43 +148,43 @@ function Services() {
 
                         {/* Made-to-Order */}
                         <div className={`bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 group transform hover:-translate-y-2 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{animationDelay: '0.9s'}}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#B54274'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#463164'}}>
                                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4 text-gray-800 text-center group-hover:text-pink-600 transition-colors duration-300">Made-to-Order</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-gray-800 text-center group-hover:text-purple-600 transition-colors duration-300">Made-to-Order</h3>
                             <p className="text-gray-600 mb-6 text-center leading-relaxed">
                                 Personalized pieces crafted upon request for a perfect fit and finish. Your vision meets our African fashion expertise.
                             </p>
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center group/item">
-                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#B54274'}} fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#463164'}} fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                                     </svg>
                                     <span className="group-hover/item:text-gray-800 transition-colors duration-300">Custom design consultation</span>
                                 </li>
                                 <li className="flex items-center group/item">
-                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#B54274'}} fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#463164'}} fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                                     </svg>
                                     <span className="group-hover/item:text-gray-800 transition-colors duration-300">Luxury African materials</span>
                                 </li>
                                 <li className="flex items-center group/item">
-                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#B54274'}} fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#463164'}} fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                                     </svg>
                                     <span className="group-hover/item:text-gray-800 transition-colors duration-300">Handcrafted details</span>
                                 </li>
                                 <li className="flex items-center group/item">
-                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#B54274'}} fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-5 h-5 mr-3 transition-colors duration-300" style={{color: '#463164'}} fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                                     </svg>
                                     <span className="group-hover/item:text-gray-800 transition-colors duration-300">3-4 weeks delivery</span>
                                 </li>
                             </ul>
                             <div className="text-center">
-                                <Link to="/contact" className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-white" style={{backgroundColor: '#B54274'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#DD943B'} onMouseLeave={(e) => e.target.style.backgroundColor = '#B54274'}>
+                                <Link to="/contact" className="px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-white" style={{backgroundColor: '#463164'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#816bb9'} onMouseLeave={(e) => e.target.style.backgroundColor = '#463164'}>
                                     Start Design
                                 </Link>
                             </div>
@@ -196,13 +196,13 @@ function Services() {
             {/* Process Section */}
             <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-200">
                 <div className="container mx-auto px-4">
-                    <h2 className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 delay-1100 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#0F8E69'}}>
+                    <h2 className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 delay-1100 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#463164'}}>
                         Our Process
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
                         <div className={`text-center group transition-all duration-1000 delay-1200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#0F8E69'}}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#D22B2B'}}>
                                 <span className="text-white font-bold text-xl">1</span>
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-gray-800">Consultation</h3>
@@ -210,7 +210,7 @@ function Services() {
                         </div>
 
                         <div className={`text-center group transition-all duration-1000 delay-1300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#DD943B'}}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#FFC300'}}>
                                 <span className="text-white font-bold text-xl">2</span>
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-gray-800">Design</h3>
@@ -218,7 +218,7 @@ function Services() {
                         </div>
 
                         <div className={`text-center group transition-all duration-1000 delay-1400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#B54274'}}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#047530'}}>
                                 <span className="text-white font-bold text-xl">3</span>
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-gray-800">Crafting</h3>
@@ -226,7 +226,7 @@ function Services() {
                         </div>
 
                         <div className={`text-center group transition-all duration-1000 delay-1500 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#9F7B5F'}}>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#000000'}}>
                                 <span className="text-white font-bold text-xl">4</span>
                             </div>
                             <h3 className="text-lg font-bold mb-2 text-gray-800">Delivery</h3>

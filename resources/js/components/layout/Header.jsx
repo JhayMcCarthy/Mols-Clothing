@@ -28,10 +28,20 @@ function Header() {
             <nav className="container mx-auto px-4 flex justify-between items-center py-4">
                 {/* Logo */}
                 <Link to="/" className="flex items-center group">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-transform duration-300" style={{backgroundColor: '#0F8E69'}}>
-                        <span className="text-white font-bold text-lg">M</span>
+                    <div className="w-15 h-15 rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                        <img 
+                            src="/images/gallery/molslogo.png" 
+                            alt="Mols Clothing Logo" 
+                            className="w-full h-full object-cover rounded-lg"
+                            onError={(e) => {
+                                // Fallback to text if image fails to load
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                            }}
+                        />
+                        <span className="text-white font-bold text-lg hidden items-center justify-center w-full h-full" style={{backgroundColor: '#0F8E69'}}>M</span>
                     </div>
-                    <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent" style={{color: '#463164'}}>
                         Mols Clothing
                     </h1>
                 </Link>
@@ -48,13 +58,13 @@ function Header() {
                                     : 'text-gray-700 hover:text-gray-900'
                             }`}
                             style={{
-                                color: isActive(link.to) ? '#0F8E69' : undefined,
-                                backgroundColor: isActive(link.to) ? '#f0f9f6' : undefined,
+                                color: isActive(link.to) ? '#816bb9' : undefined,
+                                backgroundColor: isActive(link.to) ? 'rgba(145, 114, 216, 0.29)' : undefined,
                             }}
                             onMouseEnter={(e) => {
                                 if (!isActive(link.to)) {
-                                    e.target.style.color = '#0F8E69';
-                                    e.target.style.backgroundColor = '#f0f9f6';
+                                    e.target.style.color = '#816bb9';
+                                    e.target.style.backgroundColor = 'rgba(145, 114, 216, 0.29)';
                                 }
                             }}
                             onMouseLeave={(e) => {
@@ -66,7 +76,7 @@ function Header() {
                         >
                             {link.label}
                             {isActive(link.to) && (
-                                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full" style={{backgroundColor: '#0F8E69'}}></div>
+                                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full" style={{backgroundColor: '#816bb9'}}></div>
                             )}
                         </Link>
                     ))}
@@ -78,8 +88,8 @@ function Header() {
                         onClick={toggleMobileMenu} 
                         className="p-2 rounded-lg text-gray-700 transition-all duration-300"
                         onMouseEnter={(e) => {
-                            e.target.style.color = '#0F8E69';
-                            e.target.style.backgroundColor = '#f0f9f6';
+                            e.target.style.color = '#816bb9';
+                            e.target.style.backgroundColor = 'rgba(145, 114, 216, 0.29)';
                         }}
                         onMouseLeave={(e) => {
                             e.target.style.color = '#374151';
@@ -118,13 +128,13 @@ function Header() {
                                         : 'text-gray-700'
                                 }`}
                                 style={{
-                                    color: isActive(link.to) ? '#0F8E69' : undefined,
-                                    backgroundColor: isActive(link.to) ? '#f0f9f6' : undefined,
+                                    color: isActive(link.to) ? '#816bb9' : undefined,
+                                    backgroundColor: isActive(link.to) ? 'rgba(145, 114, 216, 0.29)' : undefined,
                                 }}
                                 onMouseEnter={(e) => {
                                     if (!isActive(link.to)) {
-                                        e.target.style.color = '#0F8E69';
-                                        e.target.style.backgroundColor = '#f0f9f6';
+                                        e.target.style.color = '#816bb9';
+                                        e.target.style.backgroundColor = 'rgba(145, 114, 216, 0.29)';
                                     }
                                 }}
                                 onMouseLeave={(e) => {

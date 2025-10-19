@@ -40,7 +40,7 @@ function About() {
                 </div>
                 
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <h1 className={`text-6xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#0F8E69'}}>
+                    <h1 className={`text-6xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#463a64'}}>
                         About Mols Clothing
                     </h1>
                     <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
@@ -77,7 +77,7 @@ function About() {
                         <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                             <div className="bg-white shadow-xl rounded-2xl p-8 h-full">
                                 <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4" style={{backgroundColor: '#DD943B'}}>
+                                    <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4" style={{backgroundColor: '#816bb9'}}>
                                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                         </svg>
@@ -99,7 +99,7 @@ function About() {
             {/* Values Section */}
             <section className="py-20 bg-gradient-to-r from-gray-100 to-gray-200">
                 <div className="container mx-auto px-4">
-                    <h2 className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 delay-900 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#0F8E69'}}>
+                    <h2 className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 delay-900 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`} style={{color: '#463a64'}}>
                         Our Core Values
                     </h2>
                     
@@ -115,7 +115,7 @@ function About() {
                         </div>
 
                         <div className={`text-center group transition-all duration-1000 delay-1100 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#DD943B'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundColor: '#816bb9'}}>
                                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                 </svg>
@@ -149,18 +149,18 @@ function About() {
                             <Link 
                                 to="/contact" 
                                 className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white"
-                                style={{backgroundColor: '#DD943B'}}
-                                onMouseEnter={(e) => e.target.style.backgroundColor = '#B54274'}
-                                onMouseLeave={(e) => e.target.style.backgroundColor = '#DD943B'}
+                                style={{backgroundColor: '#463a64'}}
+                                onMouseEnter={(e) => e.target.style.backgroundColor = '#816bb9'}
+                                onMouseLeave={(e) => e.target.style.backgroundColor = '#463a64'}
                             >
                                 Get in Touch
                             </Link>
                             <Link 
                                 to="/gallery" 
                                 className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white border-2 border-transparent hover:border-white"
-                                style={{backgroundColor: '#0F8E69'}}
-                                onMouseEnter={(e) => e.target.style.backgroundColor = '#DD943B'}
-                                onMouseLeave={(e) => e.target.style.backgroundColor = '#0F8E69'}
+                                style={{backgroundColor: '#816bb9'}}
+                                onMouseEnter={(e) => e.target.style.backgroundColor = '#463a64'}
+                                onMouseLeave={(e) => e.target.style.backgroundColor = '#816bb9'}
                             >
                                 View Our Work
                             </Link>

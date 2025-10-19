@@ -48,7 +48,7 @@ function Home() {
 
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000); // Change slide every 5 seconds
+        }, 10000); // Change slide every 10 seconds
 
         return () => clearInterval(timer);
     }, [slides.length]);
@@ -131,7 +131,7 @@ function Home() {
                                                 : 'opacity-0 translate-y-8'
                                         }`}
                                         style={{
-                                            color: index === 0 ? '#DD943B' : 'white',
+                                            color: index === 0 ? '#EF798A' : 'white',
                                             textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
                                             border: '3px solid rgba(255,255,255,0.3)',
                                             padding: '20px 40px',
@@ -158,9 +158,10 @@ function Home() {
                                     <Link 
                                         to={slide.buttonLink} 
                                         className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-white"
-                                        style={{backgroundColor: '#DD943B'}}
-                                        onMouseEnter={(e) => e.target.style.backgroundColor = '#B54274'}
-                                        onMouseLeave={(e) => e.target.style.backgroundColor = '#DD943B'}
+                                        style={{backgroundColor: '#463164'}}
+                                        onMouseEnter={(e) => e.target.style.backgroundColor = '#816bb9'}
+                                        onMouseLeave={(e) => e.target.style.backgroundColor = '#463164'}
+                                        onClick={() => console.log(`Primary button clicked: ${slide.buttonText} -> ${slide.buttonLink}`)}
                                     >
                                         {slide.buttonText}
                                     </Link>
@@ -175,24 +176,6 @@ function Home() {
                         </div>
                     </div>
                 ))}
-
-                {/* Navigation Arrows */}
-                <button
-                    onClick={prevSlide}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
-                >
-                    <svg className="w-6 h-6 transition-transform duration-300 hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-                <button
-                    onClick={nextSlide}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
-                >
-                    <svg className="w-6 h-6 transition-transform duration-300 hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
 
                 {/* Dots Indicator */}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
@@ -216,35 +199,35 @@ function Home() {
             {/* Quick Features Section */}
             <section className="py-20 bg-white overflow-hidden">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 animate-fade-in-up">Why Choose Mols Clothing?</h2>
+                    <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 animate-fade-in-up" style={{color: '#463164'}}>Why Choose Mols Clothing?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         <div className="text-center group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#0F8E69'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#816bb9'}}>
                                 <svg className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors duration-300">African Heritage</h3>
+                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-purple-500 transition-colors duration-300">African Heritage</h3>
                             <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Celebrating African culture through contemporary fashion design</p>
                         </div>
 
                         <div className="text-center group animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#DD943B'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#463164'}}>
                                 <svg className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-yellow-600 transition-colors duration-300">Premium Quality</h3>
+                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Premium Quality</h3>
                             <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Exceptional craftsmanship and attention to detail in every piece</p>
                         </div>
 
                         <div className="text-center group animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#B54274'}}>
+                            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 ease-out shadow-lg group-hover:shadow-xl" style={{backgroundColor: '#816bb9'}}>
                                 <svg className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-pink-600 transition-colors duration-300">Local & Global</h3>
+                            <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Local & Global</h3>
                             <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Serving clients from Ghana to the diaspora worldwide</p>
                         </div>
                     </div>
@@ -264,25 +247,25 @@ function Home() {
                     
                     <div className={isZipAnimationTriggered ? 'animate-zip-open' : 'opacity-0'}>
                         <h2 className="text-4xl font-bold mb-6" style={{animationDelay: isZipAnimationTriggered ? '0.3s' : '0s'}}>Ready to Experience African Fashion Excellence?</h2>
-                        <p className="text-xl mb-8 max-w-2xl mx-auto" style={{animationDelay: isZipAnimationTriggered ? '0.6s' : '0s', color: '#DD943B'}}>
+                        <p className="text-xl mb-8 max-w-2xl mx-auto" style={{animationDelay: isZipAnimationTriggered ? '0.6s' : '0s', color: '#816bb9'}}>
                             Join thousands of satisfied clients who trust Mols Clothing for their fashion needs
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center" style={{animationDelay: isZipAnimationTriggered ? '0.9s' : '0s'}}>
                             <Link 
                                 to="/contact" 
                                 className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white"
-                                style={{backgroundColor: '#0F8E69'}}
-                                onMouseEnter={(e) => e.target.style.backgroundColor = '#DD943B'}
-                                onMouseLeave={(e) => e.target.style.backgroundColor = '#0F8E69'}
+                                style={{backgroundColor: '#463a64'}}
+                                onMouseEnter={(e) => e.target.style.backgroundColor = '#816bb9'}
+                                onMouseLeave={(e) => e.target.style.backgroundColor = '#463a64'}
                             >
                                 Get Started Today
                             </Link>
                             <Link 
                                 to="/about" 
                                 className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-white border-2 border-transparent hover:border-white"
-                                style={{backgroundColor: '#B54274'}}
-                                onMouseEnter={(e) => e.target.style.backgroundColor = '#DD943B'}
-                                onMouseLeave={(e) => e.target.style.backgroundColor = '#B54274'}
+                                style={{backgroundColor: '#816bb9'}}
+                                onMouseEnter={(e) => e.target.style.backgroundColor = '#463a64'}
+                                onMouseLeave={(e) => e.target.style.backgroundColor = '#816bb9'}
                             >
                                 Learn More About Us
                             </Link>
