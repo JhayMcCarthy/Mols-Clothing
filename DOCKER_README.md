@@ -225,6 +225,13 @@ docker-compose exec app npm run build
 docker-compose exec app php artisan cache:clear
 ```
 
+4. **Tailwind CSS v4 Build Issues:**
+```bash
+# If you get "tailwind.config.js not found" errors:
+# This is normal - Tailwind CSS v4 doesn't use a config file
+# The build should work without it
+```
+
 ### Logs and Debugging
 ```bash
 # View all logs

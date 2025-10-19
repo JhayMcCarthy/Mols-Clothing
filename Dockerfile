@@ -7,17 +7,19 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci
 
 # Copy frontend source files
 COPY resources/ ./resources/
 COPY public/ ./public/
 COPY vite.config.js ./
-COPY tailwind.config.js ./
 
 # Build frontend assets
 RUN npm run build
+
+# Clean up dev dependencies to reduce image size
+RUN npm prune --production
 
 # Production stage
 FROM php:8.2-fpm-alpine AS production
